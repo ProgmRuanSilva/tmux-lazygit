@@ -2,15 +2,17 @@
 
 WIDTH=100%
 HEIGHT=100%
+COMMAND="lazygit"
 
 pop() {
 	tmux popup \
 		-w "$WIDTH" \
 		-h "$HEIGHT" \
-		-d '#{pane_current_path}' \
+		-d "$PWD" \
 		-E \
 		-b rounded \
-		"lazygit"
+    "$COMMAND"
 }
 
 pop
+
